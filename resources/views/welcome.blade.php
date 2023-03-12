@@ -115,6 +115,7 @@
                 },
                 dataType: 'json',
                 success : function(result){
+
                     alert(result.message);
 
                     var rowCount = $('#table-personal > tbody > tr').length + 1;
@@ -128,13 +129,14 @@
 
                     $('#table-personal > tbody:last-child').append(html);
 
-                    if (rowCount == 0) {
+                    if (rowCount == 1) {
                         $("#info").empty();
                     }
 
                     $('#personal_data').val(null);
                     $('#personal_data').removeClass('is-invalid');
                     $('#personal_feedback').css('display','none');
+
                 },
                 error: function(response) {
                     var response = response.responseJSON;
